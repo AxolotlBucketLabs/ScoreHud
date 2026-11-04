@@ -14,5 +14,5 @@ jobs:
           php-version: 8.2
           pm-version-major: 5
           install-path: ./bin
-      - run: composer install --prefer-dist --no-interaction
+      - run: composer install --prefer-dist --no-interaction --ignore-platform-req=ext-webrtc
       - run: composer phpstan
