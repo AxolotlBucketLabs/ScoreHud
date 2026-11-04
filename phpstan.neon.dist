@@ -5,5 +5,3 @@ parameters:
         - src/jackmd
     scanDirectories:
         - vendor/axolotl-pm/pocketmine-mp/src
-    excludePaths:
-        - src/JackMD
