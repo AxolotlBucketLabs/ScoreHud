@@ -15,4 +15,5 @@ jobs:
           pm-version-major: 5
           install-path: ./bin
       - run: composer install --prefer-dist --no-interaction --ignore-platform-req=ext-webrtc
+      - run: composer test
       - run: composer phpstan

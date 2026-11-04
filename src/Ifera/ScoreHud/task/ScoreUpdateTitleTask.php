@@ -34,7 +34,9 @@ declare(strict_types = 1);
 namespace Ifera\ScoreHud\task;
 
 use Ifera\ScoreHud\ScoreHud;
+use Ifera\ScoreHud\ScoreHudSettings;
 use Ifera\ScoreHud\session\PlayerManager;
+use Ifera\ScoreHud\utils\TitleUtils;
 use pocketmine\scheduler\Task;
 use function is_null;
 
@@ -49,6 +51,13 @@ class ScoreUpdateTitleTask extends Task{
 			}
 
 			$session->handle(null, true);
+		}
+
+		// A frame is rendered once for every player, but the animation advances
+		// once per scheduled update. Advancing inside getTitle() made the speed
+		// depend on the number of online players.
+		if(ScoreHudSettings::areFlickeringTitlesEnabled()){
+			TitleUtils::advanceTitle();
 		}
 	}
 }

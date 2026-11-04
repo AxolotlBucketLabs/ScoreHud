@@ -37,25 +37,25 @@ use Ifera\ScoreHud\ScoreHudSettings;
 
 class TitleUtils{
 
-	private static int $titleIndex = 0;
+	private static TitleAnimator $animator;
 
 	public static function getTitle(bool $calledFromTask = false): string{
 		$title = ScoreHudSettings::getTitle();
 
 		if(ScoreHudSettings::areFlickeringTitlesEnabled()){
-			$titles = ScoreHudSettings::getTitles();
-
-			if(!isset($titles[self::$titleIndex])){
-				self::$titleIndex = 0;
-			}
-
-			$title = $titles[self::$titleIndex];
-
-			if($calledFromTask){
-				self::$titleIndex++;
-			}
+			$title = self::animator()->current(ScoreHudSettings::getTitles(), $title);
 		}
 
 		return $title;
+	}
+
+	public static function advanceTitle(): void{
+		if(ScoreHudSettings::areFlickeringTitlesEnabled()){
+			self::animator()->advance(ScoreHudSettings::getTitles());
+		}
+	}
+
+	private static function animator(): TitleAnimator{
+		return self::$animator ??= new TitleAnimator();
 	}
 }

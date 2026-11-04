@@ -10,6 +10,7 @@
         "classmap": ["src"]
     },
     "scripts": {
-        "phpstan": "phpstan analyse --configuration=phpstan.neon.dist --level=max --no-progress"
+        "phpstan": "phpstan analyse --configuration=phpstan.neon.dist --level=max --no-progress",
+        "test": "php tests/title-animation.php"
     }
 }

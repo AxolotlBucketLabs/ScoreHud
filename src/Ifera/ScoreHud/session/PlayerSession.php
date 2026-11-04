@@ -74,6 +74,10 @@ class PlayerSession{
 		}
 
 		$world = $world ?? $player->getWorld()->getFolderName();
+		$worldInstance = $this->plugin->getServer()->getWorldManager()->getWorldByName($world);
+		if($worldInstance === null || !$worldInstance->isLoaded()){
+			return;
+		}
 
 		// remove scoreboard if player is in a world where scoreboard is disabled
 		if(ScoreHudSettings::isInDisabledWorld($world)){

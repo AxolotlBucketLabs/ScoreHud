@@ -36,9 +36,14 @@ class FactoryListener implements Listener {
     }
 
 	public function onQuit(PlayerQuitEvent $event): void {
-		$this->plugin->getScheduler()->scheduleDelayedTask(new ClosureTask(function() use($event): void {
+		$world = $event->getPlayer()->getWorld();
+		$this->plugin->getScheduler()->scheduleDelayedTask(new ClosureTask(function() use($world): void {
 			(new ServerTagUpdateEvent(new ScoreTag("scorehud.online", (string) count($this->plugin->getServer()->getOnlinePlayers()))))->call();
-            $worldPlayers = $event->getPlayer()->getWorld()->getPlayers();
+			if(!$world->isLoaded()){
+				return;
+			}
+
+            $worldPlayers = $world->getPlayers();
             $worldCount = count($worldPlayers);
             foreach ($worldPlayers as $player) {
                 (new PlayerTagUpdateEvent($player, new ScoreTag("scorehud.world_player_count", (string) $worldCount)))->call();
