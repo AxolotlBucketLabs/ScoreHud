@@ -37,8 +37,8 @@ titles:
 # Note: You no longer need BasicScore plugin as those tags
 # are implemented within ScoreHud now.
 #
-# You can find some pre-made tags from the ScoreHudX repo:
-# https://github.com/Ifera/ScoreHudX
+# See the ScoreHud README for the built-in tag catalogue and official
+# integrations. Third-party plugins can provide tags through TagsResolveEvent.
 # ==================
 
 # You can edit the lines already set below and adjust them
