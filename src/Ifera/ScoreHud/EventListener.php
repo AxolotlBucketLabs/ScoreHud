@@ -46,13 +46,6 @@ use function is_null;
 
 class EventListener implements Listener {
 
-	/** @var ScoreHud */
-	private $plugin;
-
-	public function __construct(ScoreHud $plugin) {
-		$this->plugin = $plugin;
-	}
-
 	public function onWorldChange(EntityTeleportEvent $event): void {
 		if (!ScoreHudSettings::isMultiWorld()) {
 			return;

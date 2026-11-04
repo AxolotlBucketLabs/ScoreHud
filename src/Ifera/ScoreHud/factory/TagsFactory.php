@@ -15,7 +15,7 @@ use pocketmine\utils\Process;
 
 class TagsFactory {
 
-	public static function init(ScoreHud $plugin) {
+	public static function init(ScoreHud $plugin): void {
 		$server = $plugin->getServer();
 
 		$server->getPluginManager()->registerEvents(new FactoryListener($plugin), $plugin);
@@ -40,8 +40,9 @@ class TagsFactory {
 				$mUsage = Process::getAdvancedMemoryUsage();
 
 				$globalMemory = "MAX";
-				if($server->getConfigGroup()->getProperty("memory.global-limit") > 0){
-					$globalMemory = number_format(round($server->getConfigGroup()->getProperty("memory.global-limit"), 2), 2) . " MB";
+				$globalLimit = $server->getConfigGroup()->getProperty("memory.global-limit");
+				if((is_int($globalLimit) || is_float($globalLimit)) && $globalLimit > 0){
+					$globalMemory = number_format(round($globalLimit, 2), 2) . " MB";
 				}
 
 				(new ServerTagsUpdateEvent([

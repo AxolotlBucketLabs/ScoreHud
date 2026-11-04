@@ -37,7 +37,8 @@ use pocketmine\player\Player;
 
 class HelperUtils{
 
-	private static $players = [];
+	/** @var array<string, Player> */
+	private static array $players = [];
 
 	public static function disable(Player $player): void{
 		self::$players[$player->getUniqueId()->toString()] = $player;

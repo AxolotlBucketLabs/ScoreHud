@@ -50,7 +50,7 @@ class PlayerSession{
 	private ?Scoreboard $scoreboard;
 
 	public function __construct(private Player $player){
-		$this->plugin = ScoreHud::getInstance();
+		$this->plugin = ScoreHud::getInstance() ?? throw new \LogicException("ScoreHud is not initialized");
 		$this->scoreboard = null;
 	}
 
@@ -66,7 +66,7 @@ class PlayerSession{
 		$this->scoreboard = $scoreboard;
 	}
 
-	public function handle(string $world = null, bool $calledFromTask = false): void{
+	public function handle(?string $world = null, bool $calledFromTask = false): void{
 		$player = $this->player;
 
 		if(!$player->isOnline() || HelperUtils::isDisabled($player)){

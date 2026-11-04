@@ -35,15 +35,15 @@ namespace Ifera\ScoreHud\utils;
 
 use Ifera\ScoreHud\ScoreHud;
 use Ifera\ScoreHud\ScoreHudSettings;
-use JackMD\ConfigUpdater\ConfigUpdater;
+use Ifera\ScoreHud\compat\ConfigUpdater;
 use jackmd\scorefactory\ScoreFactory;
-use JackMD\UpdateNotifier\UpdateNotifier;
+use Ifera\ScoreHud\compat\UpdateNotifier;
 use function preg_match_all;
 use function preg_quote;
 
 class Utils{
 
-	private static $REGEX = "";
+	private static string $REGEX = "";
 
 	/**
 	 * Massive shout-out to Cortex/Marshall for this bit of code
@@ -61,6 +61,7 @@ class Utils{
 	 * Massive shout-out to Cortex/Marshall for this bit of code
 	 * used from HRKChat
 	 */
+	/** @return list<string> */
 	public static function resolveTags(string $line): array{
 		$tags = [];
 

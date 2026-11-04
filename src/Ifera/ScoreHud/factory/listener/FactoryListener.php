@@ -26,7 +26,7 @@ class FactoryListener implements Listener {
 		private ScoreHud $plugin
 	) {}
 
-	public function onJoin(PlayerJoinEvent $event) {
+	public function onJoin(PlayerJoinEvent $event): void {
 		(new ServerTagUpdateEvent(new ScoreTag("scorehud.online", (string) count($this->plugin->getServer()->getOnlinePlayers()))))->call();
         $worldPlayers = $event->getPlayer()->getWorld()->getPlayers();
         $worldCount = count($worldPlayers);
@@ -35,7 +35,7 @@ class FactoryListener implements Listener {
         }
     }
 
-	public function onQuit(PlayerQuitEvent $event) {
+	public function onQuit(PlayerQuitEvent $event): void {
 		$this->plugin->getScheduler()->scheduleDelayedTask(new ClosureTask(function() use($event): void {
 			(new ServerTagUpdateEvent(new ScoreTag("scorehud.online", (string) count($this->plugin->getServer()->getOnlinePlayers()))))->call();
             $worldPlayers = $event->getPlayer()->getWorld()->getPlayers();
@@ -46,21 +46,21 @@ class FactoryListener implements Listener {
 		}), 20);
 	}
 
-	public function onDamage(EntityDamageEvent $event) {
+	public function onDamage(EntityDamageEvent $event): void {
 		$player = $event->getEntity();
 		if (!$player instanceof Player) return;
 		(new PlayerTagUpdateEvent($player, new ScoreTag("scorehud.health", (string) ((int) $player->getHealth()))))->call();
 		(new PlayerTagUpdateEvent($player, new ScoreTag("scorehud.max_health", (string) $player->getMaxHealth())))->call();
 	}
 
-	public function onRegainHealth(EntityRegainHealthEvent $event) {
+	public function onRegainHealth(EntityRegainHealthEvent $event): void {
 		$player = $event->getEntity();
 		if (!$player instanceof Player) return;
 		(new PlayerTagUpdateEvent($player, new ScoreTag("scorehud.health", (string) ((int) $player->getHealth()))))->call();
 		(new PlayerTagUpdateEvent($player, new ScoreTag("scorehud.max_health", (string) $player->getMaxHealth())))->call();
 	}
 
-	public function onExperienceChange(PlayerExperienceChangeEvent $event) {
+	public function onExperienceChange(PlayerExperienceChangeEvent $event): void {
 		$player = $event->getEntity();
 		if (!$player instanceof Player) return;
 		(new PlayerTagUpdateEvent($player, new ScoreTag("scorehud.xp_level", (string) ((int) $player->getXpManager()->getXpLevel()))))->call();
@@ -69,7 +69,7 @@ class FactoryListener implements Listener {
 		(new PlayerTagUpdateEvent($player, new ScoreTag("scorehud.xp_current_total", (string) ((int) $player->getXpManager()->getCurrentTotalXp()))))->call();
 	}
 
-	public function onMove(PlayerMoveEvent $event) {
+	public function onMove(PlayerMoveEvent $event): void {
 		$fX = (int) $event->getFrom()->getX();
 		$fY = (int) $event->getFrom()->getY();
 		$fZ = (int) $event->getFrom()->getZ();
@@ -85,7 +85,7 @@ class FactoryListener implements Listener {
 		(new PlayerTagUpdateEvent($player, new ScoreTag("scorehud.z", (string) ((int) $player->getPosition()->getZ()))))->call();
 	}
 
-	public function onTeleport(EntityTeleportEvent $event) {
+	public function onTeleport(EntityTeleportEvent $event): void {
 		$player = $event->getEntity();
 		$target = $event->getTo()->getWorld();
         $prevWorld = $event->getFrom()->getWorld();
@@ -116,7 +116,7 @@ class FactoryListener implements Listener {
 		(new PlayerTagUpdateEvent($player, new ScoreTag("scorehud.world_folder_name", $target->getFolderName())))->call();
 	}
 
-	public function onItemHeld(PlayerItemHeldEvent $event) {
+	public function onItemHeld(PlayerItemHeldEvent $event): void {
 		$player = $event->getPlayer();
 		$item = $event->getItem();
 		(new PlayerTagUpdateEvent($player, new ScoreTag("scorehud.item_name", $item->getName())))->call();

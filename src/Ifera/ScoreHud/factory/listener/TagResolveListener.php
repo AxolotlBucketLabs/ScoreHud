@@ -20,7 +20,7 @@ class TagResolveListener implements Listener {
 		private ScoreHud $plugin
 	) {}
 
-	public function onTagResolve(TagsResolveEvent $event) {
+	public function onTagResolve(TagsResolveEvent $event): void {
 		$player = $event->getPlayer();
 		$tag = $event->getTag();
 		$tags = explode('.', $tag->getName(), 2);
@@ -134,8 +134,9 @@ class TagResolveListener implements Listener {
 			$mUsage = Process::getAdvancedMemoryUsage();
 
 			$globalMemory = "MAX";
-			if ($this->plugin->getServer()->getConfigGroup()->getProperty("memory.global-limit") > 0) {
-				$globalMemory = number_format(round($this->plugin->getServer()->getConfigGroup()->getProperty("memory.global-limit"), 2), 2) . " MB";
+			$globalLimit = $this->plugin->getServer()->getConfigGroup()->getProperty("memory.global-limit");
+			if ((is_int($globalLimit) || is_float($globalLimit)) && $globalLimit > 0) {
+				$globalMemory = number_format(round($globalLimit, 2), 2) . " MB";
 			}
 
 			switch ($tags[1]) {

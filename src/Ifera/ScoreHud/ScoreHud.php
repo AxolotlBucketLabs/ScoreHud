@@ -40,10 +40,10 @@ use Ifera\ScoreHud\session\PlayerSessionHandler;
 use Ifera\ScoreHud\task\ScoreUpdateTitleTask;
 use Ifera\ScoreHud\utils\HelperUtils;
 use Ifera\ScoreHud\utils\TitleUtils;
-use JackMD\ConfigUpdater\ConfigUpdater;
+use Ifera\ScoreHud\compat\ConfigUpdater;
 use Ifera\ScoreHud\utils\Utils;
 use jackmd\scorefactory\ScoreFactory;
-use JackMD\UpdateNotifier\UpdateNotifier;
+use Ifera\ScoreHud\compat\UpdateNotifier;
 use pocketmine\player\Player;
 use pocketmine\plugin\PluginBase;
 use pocketmine\utils\Config;
@@ -98,7 +98,7 @@ class ScoreHud extends PluginBase{
 		}
 
 		$this->getServer()->getPluginManager()->registerEvents(new PlayerSessionHandler(), $this);
-		$this->getServer()->getPluginManager()->registerEvents(new EventListener($this), $this);
+		$this->getServer()->getPluginManager()->registerEvents(new EventListener(), $this);
 
 		$this->getServer()->getCommandMap()->register("scorehud", new ScoreHudCommand($this));
 
@@ -129,7 +129,7 @@ class ScoreHud extends PluginBase{
 			$this->reloadConfig();
 		}
 
-		if(ConfigUpdater::checkUpdate($this, $this->scoreConfig, "scorehud-version", self::SCOREHUD_VERSION)){
+		if(ConfigUpdater::checkUpdate($this, $this->getScoreConfig(), "scorehud-version", self::SCOREHUD_VERSION)){
 			$updated = true;
 			$this->scoreConfig = new Config($this->getDataFolder() . "scorehud.yml", Config::YAML);
 		}
@@ -176,7 +176,7 @@ class ScoreHud extends PluginBase{
 	}
 
 	public function getScoreConfig(): Config{
-		return $this->scoreConfig;
+		return $this->scoreConfig ?? throw new \LogicException("ScoreHud configuration has not been loaded");
 	}
 
 	public function setScore(Player $player, bool $calledFromTask): void{

@@ -65,10 +65,10 @@ class ScoreHudCommand extends Command implements PluginOwned{
 	/**
 	 * @param CommandSender $sender
 	 * @param string        $commandLabel
-	 * @param array         $args
-	 * @return bool|mixed
+	 * @param array<int, string> $args
+	 * @return bool
 	 */
-	public function execute(CommandSender $sender, string $commandLabel, array $args){
+	public function execute(CommandSender $sender, string $commandLabel, array $args): bool{
 		if(!$this->testPermission($sender)){
 			return true;
 		}

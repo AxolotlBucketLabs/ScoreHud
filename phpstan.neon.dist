@@ -1,0 +1,9 @@
+parameters:
+    level: max
+    paths:
+        - src/Ifera
+        - src/jackmd
+    scanDirectories:
+        - vendor/axolotl-pm/pocketmine-mp/src
+    excludePaths:
+        - src/JackMD

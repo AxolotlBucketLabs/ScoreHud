@@ -73,11 +73,17 @@ class ScoreboardHelper{
 	/**
 	 * Separates the tags from the lines and returns all the tag names
 	 */
+	/**
+	 * @param list<string> $lines
+	 * @return list<string>
+	 */
 	public static function resolveLines(array $lines): array{
 		$tags = [];
 
 		foreach($lines as $line){
-			$tags = array_merge($tags, Utils::resolveTags($line));
+			foreach(Utils::resolveTags($line) as $tag){
+				$tags[] = $tag;
+			}
 		}
 
 		return $tags;

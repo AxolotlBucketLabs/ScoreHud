@@ -2,6 +2,11 @@
 
 # ScoreHud
 
+This repository is maintained by [NhanAZ-Plugins](https://github.com/NhanAZ-Plugins)
+for current [Axolotl-PM](https://github.com/axolotl-pm/PocketMine-MP) releases.
+The bundled ScoreFactory implementation follows the current `ScorePacketEntry`
+and `SetScorePacket` APIs, and the project is checked with PHPStan level max.
+
 | Discord | License | Poggit | Release |
 |:--:|:--:|:--:|:--:|
 |[![Chat](https://img.shields.io/badge/chat-on%20discord-7289da.svg)](https://discord.gg/urQt6ETgYu)|[![GitHub license](https://img.shields.io/github/license/Ifera/ScoreHud.svg)](https://github.com/Ifera/ScoreHud/blob/master/LICENSE)|[![Poggit-CI](https://poggit.pmmp.io/ci.shield/Ifera/ScoreHud/ScoreHud)](https://poggit.pmmp.io/ci/Ifera/ScoreHud/ScoreHud)|[![](https://poggit.pmmp.io/shield.state/ScoreHud)](https://poggit.pmmp.io/p/ScoreHud)|

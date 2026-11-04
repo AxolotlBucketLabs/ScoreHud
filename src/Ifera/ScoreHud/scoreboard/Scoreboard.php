@@ -48,12 +48,14 @@ use function strlen;
 
 class Scoreboard{
 
-	/** @var string[] */
-	private $formattedLines = [];
+	/** @var array<int, string> */
+	private array $formattedLines = [];
 
 	public function __construct(
 		private PlayerSession $session,
+		/** @var list<string> */
 		private array $lines = [],
+		/** @var array<int, ScoreTag> */
 		private array $tags = []
 	) {}
 
@@ -64,6 +66,7 @@ class Scoreboard{
 	/**
 	 * @return string[]
 	 */
+	/** @return list<string> */
 	public function getLines(): array{
 		return $this->lines;
 	}
@@ -87,15 +90,17 @@ class Scoreboard{
 	/**
 	 * @return ScoreTag[]
 	 */
+	/** @return array<int, ScoreTag> */
 	public function getTags(): array{
 		return $this->tags;
 	}
 
+	/** @param array<int, ScoreTag> $tags */
 	public function setTags(array $tags): void{
 		$this->tags = $tags;
 	}
 
-	public function getTag(string $name, &$index = null): ?ScoreTag{
+	public function getTag(string $name, ?int &$index = null): ?ScoreTag{
 		$tag = null;
 
 		foreach($this->tags as $key => $scoreTag){
@@ -117,6 +122,7 @@ class Scoreboard{
 	 * Returns tags used by the scoreboard indexed by their
 	 * id followed by its value.
 	 */
+	/** @return array<string, string> */
 	public function getProcessedTags(): array{
 		$processedTags = [];
 

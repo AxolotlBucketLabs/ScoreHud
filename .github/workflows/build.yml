@@ -1,0 +1,26 @@
+name: Build PHAR
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pmmp/setup-php-action@3.2.0
+        with:
+          php-version: 8.4
+          install-path: ./bin
+      - uses: actions/checkout@v4
+        with:
+          repository: axolotl-pm/PocketMine-MP
+          path: .pocketmine-mp
+          sparse-checkout: tests/plugins/DevTools
+      - name: Build with DevTools
+        run: php -dphar.readonly=0 .pocketmine-mp/tests/plugins/DevTools/src/ConsoleScript.php --make src,resources,plugin.yml,meta,changelogs --out ScoreHud.phar
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ScoreHud
+          path: ScoreHud.phar

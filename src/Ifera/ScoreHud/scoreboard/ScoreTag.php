@@ -56,6 +56,7 @@ class ScoreTag {
 		$this->value = $value;
 	}
 
+	/** @return array{name: string, value: string} */
 	public function __toArray(): array {
 		return [
 			"name"  => $this->name,

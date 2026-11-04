@@ -37,7 +37,7 @@ use Ifera\ScoreHud\ScoreHudSettings;
 
 class TitleUtils{
 
-	private static $titleIndex = 0;
+	private static int $titleIndex = 0;
 
 	public static function getTitle(bool $calledFromTask = false): string{
 		$title = ScoreHudSettings::getTitle();
