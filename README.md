@@ -1,4 +1,11 @@
-<img align="right" width="auto" height="260" src="https://github.com/JackMD/ScoreHud/blob/master/meta/ScoreHud.PNG" alt="ScoreHud Banner">
+# ScoreHud
+
+An event driven, highly customizable plugin to add Scoreboards on your Minecraft Bedrock Server.
+
+[![CI](https://github.com/NhanAZ-Plugins/ScoreHud/actions/workflows/build.yml/badge.svg)](https://github.com/NhanAZ-Plugins/ScoreHud/actions/workflows/build.yml)
+[![License](https://img.shields.io/github/license/NhanAZ-Plugins/ScoreHud)](https://github.com/NhanAZ-Plugins/ScoreHud/blob/master/LICENSE)
+[![Discord](https://img.shields.io/discord/986553214889517088?label=Discord&logo=discord&logoColor=white&color=5865F2)](https://discord.gg/j2X83ujT6c)
+
 
 # ScoreHud
 
