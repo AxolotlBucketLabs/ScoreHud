@@ -30,3 +30,8 @@ The CI workflow validates the source and builds the plugin against the supported
 ## Support and license
 
 Report bugs through [GitHub Issues](https://github.com/NhanAZ-Plugins/ScoreHud/issues) or ask in the [NhanAZ Discord](https://discord.gg/j2X83ujT6c). ScoreHud is distributed under the [MIT License](https://github.com/NhanAZ-Plugins/ScoreHud/blob/master/LICENSE).
+
+
+## Credits
+
+Authors: NhanAZ, Ifera.
