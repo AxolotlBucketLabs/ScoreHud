@@ -1,68 +1,32 @@
 # ScoreHud
 
-An event driven, highly customizable plugin to add Scoreboards on your Minecraft Bedrock Server.
-
 [![CI](https://github.com/NhanAZ-Plugins/ScoreHud/actions/workflows/build.yml/badge.svg)](https://github.com/NhanAZ-Plugins/ScoreHud/actions/workflows/build.yml)
 [![License](https://img.shields.io/github/license/NhanAZ-Plugins/ScoreHud)](https://github.com/NhanAZ-Plugins/ScoreHud/blob/master/LICENSE)
 [![Discord](https://img.shields.io/discord/986553214889517088?label=Discord&logo=discord&logoColor=white&color=5865F2)](https://discord.gg/j2X83ujT6c)
 
+ScoreHud is an event-driven, customizable scoreboard plugin for Axolotl-PM. This repository is the maintained continuation under [NhanAZ-Plugins](https://github.com/NhanAZ-Plugins), with the original ScoreHud configuration and developer-facing tag system preserved.
 
-# ScoreHud
+## Features
 
-This repository is maintained by [NhanAZ-Plugins](https://github.com/NhanAZ-Plugins)
-for current [Axolotl-PM](https://github.com/axolotl-pm/PocketMine-MP) releases.
-The bundled ScoreFactory implementation follows the current `ScorePacketEntry`
-and `SetScorePacket` APIs, and the project is checked with PHPStan level max.
+- Configurable scoreboards with support for 1 to 15 lines.
+- Event-driven updates without a repeating scoreboard task.
+- Built-in tags and an API for custom integrations.
+- Additional tags through [ScoreHudX](https://github.com/Ifera/ScoreHudX).
 
-| Discord | License | Poggit | Release |
-|:--:|:--:|:--:|:--:|
-|[![Chat](https://img.shields.io/badge/chat-on%20discord-7289da.svg)](https://discord.gg/urQt6ETgYu)|[![GitHub license](https://img.shields.io/github/license/Ifera/ScoreHud.svg)](https://github.com/Ifera/ScoreHud/blob/master/LICENSE)|[![Poggit-CI](https://poggit.pmmp.io/ci.shield/Ifera/ScoreHud/ScoreHud)](https://poggit.pmmp.io/ci/Ifera/ScoreHud/ScoreHud)|[![](https://poggit.pmmp.io/shield.state/ScoreHud)](https://poggit.pmmp.io/p/ScoreHud)|
+## Installation
 
-#### A highly customizable plugin to add Scoreboards on your Minecraft: Bedrock Server.
+1. Download the latest `ScoreHud.phar` from [Releases](https://github.com/NhanAZ-Plugins/ScoreHud/releases/latest).
+2. Place the PHAR in the server's `plugins` directory.
+3. Start the server, then edit `config.yml` and `scorehud.yml`.
 
-Click [here](https://github.com/Ifera/ScoreHud/blob/master/changelogs/8.0.0.md) to view the latest **changelog**.
+## Tags and documentation
 
-### Features:
+See the [available tags wiki](https://github.com/Ifera/ScoreHud/wiki/Available-Tags) for built-in tags. Refer to the [developer wiki](https://github.com/Ifera/ScoreHud/wiki) for integration details and the [ScoreHudX repository](https://github.com/Ifera/ScoreHudX) for additional tags.
 
- - This plugin adds **scoreboard** to your server.
- - Completely **Event Driven**!! Goodbye tasks!
- - Everything is customizable.
- - Easy and simple API for developers to use and integrate ScoreHud.
- - Some basic tags are integrated within ScoreHud.
- - You can find more tags support in the [ScoreHudX](https://github.com/Ifera/ScoreHudX) repo.
- 
-### Available Tags:
+## Development
 
-- Please visit the wiki [here](https://github.com/Ifera/ScoreHud/wiki/Available-Tags) for a list of in-built tags provided by ScoreHud.
-- Please check out the [ScoreHudX](https://github.com/Ifera/ScoreHudX) repo for more tags.
-- Also read the [discussions](https://github.com/Ifera/ScoreHudX/discussions).
+The CI workflow validates the source and builds the plugin against the supported Axolotl-PM API. It also runs PHPStan at level max. Pin the server and DevTools revisions when reproducing a build locally.
 
-### How to setup?
+## Support and license
 
- - Put the plugin in your plugins folder.
- - Start and then stop the server.
- - Edit the `config.yml` and `scorehud.yml` to suit your needs.
- - Restart and enjoy.
- 
-### FAQs:
-
-**Q: Help I am getting this error. `Required extension Core has an incompatible version (7.x.y not >=7.4)`**<br />
-A: This means that the PHP binary that your server is using is outdated. Please update it to v7.4 or greater to continue using ScoreHud. <br /><br />
-**Q: How many lines can I set in `default-board`?**<br />
-A: You can set 1 to 15 lines in `default-board`. <br /><br />
-**Q: How many `server-names` can I set?**<br />
-A: You can set infinite many number of `server-names`. <br /><br />
-**Q: I am having problems and cannot set the plugin correctly. What do I do?**<br />
-A: Well you can always open a new issue on this repository or contact me via Discord: `Ifera#3717` or Twitter: `@ifera_tr`. <br /><br />
-**Q: I like the plugin. What do I do?**<br />
-A: Well, that is extremely fortunate. Why not to star this repository and might as well a good review on [poggit](https://poggit.pmmp.io/p/ScoreHud).<br /><br />
-**Q: What happened to addons?**<br />
-A: Addons system being simple and similar to pocketmine had some flaws especially when combined with tasks caused a great deal of lag. ScoreHud is now event driven and no longer depends on tasks, so it was only fitting to remove addon support as a whole. <br />
-
-### Changelogs:
-
- - Visit [here](https://github.com/Ifera/ScoreHud/tree/master/changelogs).
-
-### For Developers:
-
- - Refer to [wiki](https://github.com/Ifera/ScoreHud/wiki).
+Report bugs through [GitHub Issues](https://github.com/NhanAZ-Plugins/ScoreHud/issues) or ask in the [NhanAZ Discord](https://discord.gg/j2X83ujT6c). ScoreHud is distributed under the [MIT License](https://github.com/NhanAZ-Plugins/ScoreHud/blob/master/LICENSE).
