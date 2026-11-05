@@ -10,8 +10,8 @@ does not require any of these plugins to start.
 | --- | --- |
 | [EcoAPIScore](https://github.com/NhanAZ-Plugins/EcoAPIScore) | `{ecoapi.balance}`, `{ecoapi.raw}`, `{ecoapi.money}`, `{ecoapi.formatted}`, `{ecoapi.provider}`, `{ecoapi.currency}` |
 | [SimpleEconomy](https://github.com/NhanAZ-Plugins/SimpleEconomy) | `{simpleeconomy.balance}` formatted balance, `{simpleeconomy.raw}` raw integer balance, `{simpleeconomy.rank}` leaderboard position |
-| [PurePerms](https://github.com/poggit-orphanage/PurePerms) | `{ppscore.rank}`, `{ppscore.prefix}`, `{ppscore.suffix}` |
-| [PureChat](https://github.com/poggit-orphanage/PureChat) | `{purechat.prefix}`, `{purechat.suffix}`, `{purechat.faction_name}`, `{purechat.faction_rank}`; compatibility aliases `{pureperms.prefix}`, `{pureperms.suffix}`, `{pureperms.group}`, `{pureperms.rank}` |
+| [PurePerms](https://github.com/NhanAZ-Plugins/PurePerms) | `{ppscore.rank}`, `{ppscore.prefix}`, `{ppscore.suffix}` |
+| [PureChat](https://github.com/NhanAZ-Plugins/PureChat) | `{purechat.prefix}`, `{purechat.suffix}`, `{purechat.faction_name}`, `{purechat.faction_rank}`; compatibility aliases `{pureperms.prefix}`, `{pureperms.suffix}`, `{pureperms.group}`, `{pureperms.rank}` |
 
 The sections below document every tag individually.
 
