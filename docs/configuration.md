@@ -93,4 +93,3 @@ tag-factory:
 
 The `time.zone`, `time.format.time` and `time.format.date` settings
 control the values returned by `{scorehud.time}` and `{scorehud.date}`.
-

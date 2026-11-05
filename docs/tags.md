@@ -50,4 +50,3 @@ player-count tags. Names such as `{player.online}`,
 remain unresolved unless another plugin provides them.
 
 For custom tags, see the [Developer API reference](developer-api.md).
-

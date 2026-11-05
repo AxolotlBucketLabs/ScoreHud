@@ -63,4 +63,3 @@ $player->getServer()->getPluginManager()->callEvent(
 - `Ifera\ScoreHud\event\ServerTagsUpdateEvent` updates several server-wide
   tags.
 - `Ifera\ScoreHud\scoreboard\ScoreTag` carries a tag name and string value.
-

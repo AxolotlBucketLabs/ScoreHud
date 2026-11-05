@@ -27,4 +27,3 @@ If a tag appears literally on the scoreboard:
 
 For built-in tags, use the [tags reference](tags.md). For resolver code, see
 the [Developer API reference](developer-api.md).
-
