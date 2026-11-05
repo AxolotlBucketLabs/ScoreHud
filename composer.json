@@ -2,6 +2,9 @@
     "name": "nhanaz-plugins/scorehud",
     "description": "ScoreHud maintained for current Axolotl-PM releases",
     "type": "library",
+    "require": {
+        "php": ">=8.4"
+    },
     "require-dev": {
         "axolotl-pm/pocketmine-mp": "^5.45.0",
         "phpstan/phpstan": "^2.2.7"

@@ -1,7 +1,5 @@
 # ScoreHud
 
-![ScoreHud banner](meta/ScoreHud.PNG)
-
 ScoreHud is a configurable Bedrock scoreboard plugin for PocketMine-MP. This
 repository is the maintained, self-contained build for current Axolotl-PM API 5
 servers. The bundled ScoreFactory uses the current scoreboard packet API, so no
@@ -26,10 +24,10 @@ runtime.
 
 ## Installation
 
-1. Download ScoreHud.phar from the latest release.
-2. Copy it to the plugins directory of an Axolotl-PM API 5 server.
-3. Start the server once, then edit plugin_data/ScoreHud/config.yml and
-   plugin_data/ScoreHud/scorehud.yml.
+1. Download `ScoreHud.phar` from the latest release.
+2. Copy it to the `plugins` directory of an Axolotl-PM API 5 server.
+3. Start the server once, then edit `plugin_data/ScoreHud/config.yml` and
+   `plugin_data/ScoreHud/scorehud.yml`.
 4. Restart the server.
 
 ScoreHud has no mandatory dependency. Optional integrations activate when their
@@ -54,38 +52,38 @@ default-board:
   - ""
 ~~~
 
-Use {scorehud.online} and {scorehud.max_online} for the built-in player count
-tags. The older {player.online}, {player.max_online} and {town.coins} names are
-not ScoreHud tags and will remain unresolved.
+Use `{scorehud.online}` and `{scorehud.max_online}` for the built-in player count
+tags. The older `{player.online}`, `{player.max_online}` and `{town.coins}` names
+are not ScoreHud tags and will remain unresolved.
 
 ## Tags
 
-Tags are written between braces, for example {scorehud.name}. Unknown tags are
-left available to other plugins through TagsResolveEvent.
+Tags are written between braces, for example `{scorehud.name}`. Unknown tags are
+left available to other plugins through `TagsResolveEvent`.
 
 ### Built-in ScoreHud tags
 
 | Tag | Description |
 | --- | --- |
-| {scorehud.name} / {scorehud.real_name} | Player name |
-| {scorehud.display_name} | Player display name |
-| {scorehud.online} | Current online-player count |
-| {scorehud.max_online} | Server max-player setting |
-| {scorehud.world_player_count} | Players in the current world |
-| {scorehud.world_name} / {scorehud.level_name} | World display name |
-| {scorehud.world_folder_name} / {scorehud.level_folder_name} | World folder name |
-| {scorehud.x}, {scorehud.y}, {scorehud.z} | Integer player coordinates |
-| {scorehud.health} / {scorehud.max_health} | Current and maximum health |
-| {scorehud.xp_level} | Experience level |
-| {scorehud.xp_progress} | Experience progress |
-| {scorehud.xp_remainder} | Remaining experience to the next level |
-| {scorehud.xp_current_total} | Total experience |
-| {scorehud.item_name} / {scorehud.item_count} | Held item and count |
-| {scorehud.ping} | Network ping |
-| {scorehud.ip} | Player IP address |
-| {scorehud.time} / {scorehud.date} | Configured server time and date |
-| {scorehud.load} / {scorehud.tps} | Tick usage and ticks per second |
-| {scorehud.memory_main_thread}, {scorehud.memory_total}, {scorehud.memory_virtual}, {scorehud.memory_heap}, {scorehud.memory_global} | Optional memory metrics; enable them in config.yml |
+| `{scorehud.name}` / `{scorehud.real_name}` | Player name |
+| `{scorehud.display_name}` | Player display name |
+| `{scorehud.online}` | Current online-player count |
+| `{scorehud.max_online}` | Server max-player setting |
+| `{scorehud.world_player_count}` | Players in the current world |
+| `{scorehud.world_name}` / `{scorehud.level_name}` | World display name |
+| `{scorehud.world_folder_name}` / `{scorehud.level_folder_name}` | World folder name |
+| `{scorehud.x}`, `{scorehud.y}`, `{scorehud.z}` | Integer player coordinates |
+| `{scorehud.health}` / `{scorehud.max_health}` | Current and maximum health |
+| `{scorehud.xp_level}` | Experience level |
+| `{scorehud.xp_progress}` | Experience progress |
+| `{scorehud.xp_remainder}` | Remaining experience to the next level |
+| `{scorehud.xp_current_total}` | Total experience |
+| `{scorehud.item_name}` / `{scorehud.item_count}` | Held item and count |
+| `{scorehud.ping}` | Network ping |
+| `{scorehud.ip}` | Player IP address |
+| `{scorehud.time}` / `{scorehud.date}` | Configured server time and date |
+| `{scorehud.load}` / `{scorehud.tps}` | Tick usage and ticks per second |
+| `{scorehud.memory_main_thread}`, `{scorehud.memory_total}`, `{scorehud.memory_virtual}`, `{scorehud.memory_heap}`, `{scorehud.memory_global}` | Optional memory metrics; enable them in `config.yml` |
 
 ### Official optional integrations
 
@@ -95,10 +93,10 @@ start.
 
 | Plugin | Tags |
 | --- | --- |
-| [EcoAPIScore](https://github.com/NhanAZ-Plugins/EcoAPIScore) | {ecoapi.balance}, {ecoapi.raw}, {ecoapi.money}, {ecoapi.formatted}, {ecoapi.provider}, {ecoapi.currency} |
-| [SimpleEconomy](https://github.com/NhanAZ-Plugins/SimpleEconomy) | {simpleeconomy.balance} formatted balance, {simpleeconomy.raw} raw integer balance, {simpleeconomy.rank} leaderboard position |
-| [PurePerms](https://github.com/NhanAZ-Plugins/PurePerms) | {ppscore.rank}, {ppscore.prefix}, {ppscore.suffix} |
-| [PureChat](https://github.com/NhanAZ-Plugins/PureChat) | {purechat.prefix}, {purechat.suffix}, {purechat.faction_name}, {purechat.faction_rank}; compatibility aliases {pureperms.prefix}, {pureperms.suffix}, {pureperms.group}, {pureperms.rank} |
+| [EcoAPIScore](https://github.com/NhanAZ-Plugins/EcoAPIScore) | `{ecoapi.balance}`, `{ecoapi.raw}`, `{ecoapi.money}`, `{ecoapi.formatted}`, `{ecoapi.provider}`, `{ecoapi.currency}` |
+| [SimpleEconomy](https://github.com/NhanAZ-Plugins/SimpleEconomy) | `{simpleeconomy.balance}` formatted balance, `{simpleeconomy.raw}` raw integer balance, `{simpleeconomy.rank}` leaderboard position |
+| [PurePerms](https://github.com/NhanAZ-Plugins/PurePerms) | `{ppscore.rank}`, `{ppscore.prefix}`, `{ppscore.suffix}` |
+| [PureChat](https://github.com/NhanAZ-Plugins/PureChat) | `{purechat.prefix}`, `{purechat.suffix}`, `{purechat.faction_name}`, `{purechat.faction_rank}`; compatibility aliases `{pureperms.prefix}`, `{pureperms.suffix}`, `{pureperms.group}`, `{pureperms.rank}` |
 
 SimpleEconomy, PureChat and PurePerms resolve their own optional tags through
 ScoreHud's public events. Their integration is deliberately soft: removing one
@@ -106,7 +104,7 @@ of those plugins does not make ScoreHud fail to load.
 
 ## Titles and animation
 
-Enable title animation in plugin_data/ScoreHud/scorehud.yml:
+Enable title animation in `plugin_data/ScoreHud/scorehud.yml`:
 
 ~~~yaml
 titles:
@@ -118,29 +116,29 @@ titles:
     - "§b☆§fMyServer§b☆"
 ~~~
 
-period is measured in seconds. Each scheduled update selects one frame and
+`period` is measured in seconds. Each scheduled update selects one frame and
 renders that same frame for every online player, so adding players does not
 accelerate the animation.
 
 ## Developer API
 
-The public API is exposed under the Ifera\ScoreHud namespace:
+The public API is exposed under the `Ifera\ScoreHud` namespace:
 
-- Ifera\ScoreHud\event\TagsResolveEvent resolves a tag while a scoreboard is built.
-- Ifera\ScoreHud\event\PlayerTagUpdateEvent updates one tag for one player.
-- Ifera\ScoreHud\event\PlayerTagsUpdateEvent updates several tags for one player.
-- Ifera\ScoreHud\event\ServerTagUpdateEvent updates one tag for all players.
-- Ifera\ScoreHud\event\ServerTagsUpdateEvent updates several server tags.
-- Ifera\ScoreHud\scoreboard\ScoreTag carries a tag name and string value.
+- `Ifera\ScoreHud\event\TagsResolveEvent` resolves a tag while a scoreboard is built.
+- `Ifera\ScoreHud\event\PlayerTagUpdateEvent` updates one tag for one player.
+- `Ifera\ScoreHud\event\PlayerTagsUpdateEvent` updates several tags for one player.
+- `Ifera\ScoreHud\event\ServerTagUpdateEvent` updates one tag for all players.
+- `Ifera\ScoreHud\event\ServerTagsUpdateEvent` updates several server tags.
+- `Ifera\ScoreHud\scoreboard\ScoreTag` carries a tag name and string value.
 
-For a resolver, listen to TagsResolveEvent, inspect
-$event->getTag()->getName() and set the value with
-$event->getTag()->setValue($value). Use the update events when a value changes
+For a resolver, listen to `TagsResolveEvent`, inspect
+`$event->getTag()->getName()` and set the value with
+`$event->getTag()->setValue($value)`. Use the update events when a value changes
 after the board has been created.
 
 ## Build and verification
 
-Requirements: PHP 8.2 or newer, Composer, and an Axolotl-PM API 5 development
+Requirements: PHP 8.4 or newer, Composer, and an Axolotl-PM API 5 development
 source tree.
 
 ~~~powershell
@@ -152,7 +150,7 @@ composer phpstan
 The GitHub Actions workflows also build the PHAR with
 [PocketMine DevTools](https://github.com/pmmp/DevTools) and upload it as a CI
 artifact. A release asset is generated from the same source set:
-src, resources, plugin.yml, meta and changelogs.
+`src`, `resources`, `plugin.yml`, `meta` and `changelogs`.
 
 ## Troubleshooting
 
@@ -164,10 +162,10 @@ line order stable; the line text is still the configured scoreboard content.
 ### A tag is shown literally
 
 Check the exact tag spelling and confirm the optional provider plugin is enabled.
-For example, use {scorehud.online} rather than {player.online}, and
-{simpleeconomy.balance} rather than a tag from another economy plugin.
+For example, use `{scorehud.online}` rather than `{player.online}`, and
+`{simpleeconomy.balance}` rather than a tag from another economy plugin.
 
-### The server crashes with TYPE_FAKE_PLAYER
+### The server crashes with `TYPE_FAKE_PLAYER`
 
 That is an old ScoreFactory packet constant and indicates an outdated ScoreHud
 build. Use the PHAR from this repository's latest release, then remove the old
