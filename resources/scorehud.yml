@@ -37,8 +37,9 @@ titles:
 # Note: You no longer need BasicScore plugin as those tags
 # are implemented within ScoreHud now.
 #
-# See the ScoreHud README for the built-in tag catalogue and official
-# integrations. Third-party plugins can provide tags through TagsResolveEvent.
+# See the ScoreHud project documentation for the built-in tag catalogue and
+# official integrations. Third-party plugins can provide tags through
+# TagsResolveEvent.
 # ==================
 
 # You can edit the lines already set below and adjust them

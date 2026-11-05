@@ -35,8 +35,7 @@ plugin is installed and enabled.
 
 ## Quick configuration
 
-The following example uses the official integrations maintained alongside this
-fork:
+The following example shows a simple board in `plugin_data/ScoreHud/scorehud.yml`:
 
 ~~~yaml
 default-board:
@@ -52,89 +51,28 @@ default-board:
   - ""
 ~~~
 
-Use `{scorehud.online}` and `{scorehud.max_online}` for the built-in player count
-tags. The older `{player.online}`, `{player.max_online}` and `{town.coins}` names
-are not ScoreHud tags and will remain unresolved.
+See the [configuration guide](docs/configuration.md) for per-world boards,
+disabled worlds, title animation and tag-factory settings.
 
 ## Tags
 
-Tags are written between braces, for example `{scorehud.name}`. Unknown tags are
-left available to other plugins through `TagsResolveEvent`.
+Tags are written between braces, for example `{scorehud.name}`. See the
+[tags reference](docs/tags.md) for the complete built-in catalogue, usage
+examples and custom-tag guidance.
 
-### Built-in ScoreHud tags
+## Official optional integrations
 
-| Tag | Description |
-| --- | --- |
-| `{scorehud.name}` / `{scorehud.real_name}` | Player name |
-| `{scorehud.display_name}` | Player display name |
-| `{scorehud.online}` | Current online-player count |
-| `{scorehud.max_online}` | Server max-player setting |
-| `{scorehud.world_player_count}` | Players in the current world |
-| `{scorehud.world_name}` / `{scorehud.level_name}` | World display name |
-| `{scorehud.world_folder_name}` / `{scorehud.level_folder_name}` | World folder name |
-| `{scorehud.x}`, `{scorehud.y}`, `{scorehud.z}` | Integer player coordinates |
-| `{scorehud.health}` / `{scorehud.max_health}` | Current and maximum health |
-| `{scorehud.xp_level}` | Experience level |
-| `{scorehud.xp_progress}` | Experience progress |
-| `{scorehud.xp_remainder}` | Remaining experience to the next level |
-| `{scorehud.xp_current_total}` | Total experience |
-| `{scorehud.item_name}` / `{scorehud.item_count}` | Held item and count |
-| `{scorehud.ping}` | Network ping |
-| `{scorehud.ip}` | Player IP address |
-| `{scorehud.time}` / `{scorehud.date}` | Configured server time and date |
-| `{scorehud.load}` / `{scorehud.tps}` | Tick usage and ticks per second |
-| `{scorehud.memory_main_thread}`, `{scorehud.memory_total}`, `{scorehud.memory_virtual}`, `{scorehud.memory_heap}`, `{scorehud.memory_global}` | Optional memory metrics; enable them in `config.yml` |
-
-### Official optional integrations
-
-These tags are part of the supported NhanAZ-Plugins integration set. Install the
-corresponding plugin beside ScoreHud; ScoreHud does not require any of them to
-start.
-
-| Plugin | Tags |
-| --- | --- |
-| [EcoAPIScore](https://github.com/NhanAZ-Plugins/EcoAPIScore) | `{ecoapi.balance}`, `{ecoapi.raw}`, `{ecoapi.money}`, `{ecoapi.formatted}`, `{ecoapi.provider}`, `{ecoapi.currency}` |
-| [SimpleEconomy](https://github.com/NhanAZ-Plugins/SimpleEconomy) | `{simpleeconomy.balance}` formatted balance, `{simpleeconomy.raw}` raw integer balance, `{simpleeconomy.rank}` leaderboard position |
-| [PurePerms](https://github.com/NhanAZ-Plugins/PurePerms) | `{ppscore.rank}`, `{ppscore.prefix}`, `{ppscore.suffix}` |
-| [PureChat](https://github.com/NhanAZ-Plugins/PureChat) | `{purechat.prefix}`, `{purechat.suffix}`, `{purechat.faction_name}`, `{purechat.faction_rank}`; compatibility aliases `{pureperms.prefix}`, `{pureperms.suffix}`, `{pureperms.group}`, `{pureperms.rank}` |
-
-SimpleEconomy, PureChat and PurePerms resolve their own optional tags through
-ScoreHud's public events. Their integration is deliberately soft: removing one
-of those plugins does not make ScoreHud fail to load.
+See the [official integrations guide](docs/integrations.md) for supported
+plugins, tags, installation expectations and troubleshooting.
 
 ## Titles and animation
 
-Enable title animation in `plugin_data/ScoreHud/scorehud.yml`:
-
-~~~yaml
-titles:
-  title: "§l§aServer §dName"
-  flicker: true
-  period: 5
-  lines:
-    - "§8☆§eMyServer§8☆"
-    - "§b☆§fMyServer§b☆"
-~~~
-
-`period` is measured in seconds. Each scheduled update selects one frame and
-renders that same frame for every online player, so adding players does not
-accelerate the animation.
+See the [configuration guide](docs/configuration.md#titles-and-animation).
 
 ## Developer API
 
-The public API is exposed under the `Ifera\ScoreHud` namespace:
-
-- `Ifera\ScoreHud\event\TagsResolveEvent` resolves a tag while a scoreboard is built.
-- `Ifera\ScoreHud\event\PlayerTagUpdateEvent` updates one tag for one player.
-- `Ifera\ScoreHud\event\PlayerTagsUpdateEvent` updates several tags for one player.
-- `Ifera\ScoreHud\event\ServerTagUpdateEvent` updates one tag for all players.
-- `Ifera\ScoreHud\event\ServerTagsUpdateEvent` updates several server tags.
-- `Ifera\ScoreHud\scoreboard\ScoreTag` carries a tag name and string value.
-
-For a resolver, listen to `TagsResolveEvent`, inspect
-`$event->getTag()->getName()` and set the value with
-`$event->getTag()->setValue($value)`. Use the update events when a value changes
-after the board has been created.
+See the [Developer API reference](docs/developer-api.md) for custom tag
+resolvers, update events and `ScoreTag` usage.
 
 ## Build and verification
 
