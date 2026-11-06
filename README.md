@@ -85,9 +85,9 @@ composer test
 composer phpstan
 ~~~
 
-The GitHub Actions workflows also build the PHAR with
-[PocketMine DevTools](https://github.com/pmmp/DevTools) and upload it as a CI
-artifact. A release asset is generated from the same source set:
+The GitHub Actions workflows also build the PHAR with the pinned PocketMine-MP
+DevTools source and upload it as a CI artifact. A release asset is generated
+from the same source set:
 `src`, `resources`, `plugin.yml`, `meta` and `changelogs`.
 
 ## Troubleshooting
@@ -95,7 +95,7 @@ artifact. A release asset is generated from the same source set:
 ### The scoreboard shows red numbers on the right
 
 Those numbers are Bedrock's score values. ScoreHud uses the score value to keep
-line order stable; the line text is still the configured scoreboard content.
+line order stable. The line text is still the configured scoreboard content.
 
 ### A tag is shown literally
 
@@ -114,7 +114,7 @@ ScoreHud PHAR before restarting the server.
 Open a reproducible bug report or feature request in the
 [ScoreHud issue tracker](https://github.com/AxolotlBucketLabs/ScoreHud/issues). The
 repository changelogs are kept with the source, so this README is the canonical
-user and developer documentation; no external wiki is required.
+user and developer documentation. No external wiki is required.
 
 ## License and attribution
 

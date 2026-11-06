@@ -11,7 +11,7 @@ does not require any of these plugins to start.
 | [EcoAPIScore](https://github.com/NhanAZ-Plugins/EcoAPIScore) | `{ecoapi.balance}`, `{ecoapi.raw}`, `{ecoapi.money}`, `{ecoapi.formatted}`, `{ecoapi.provider}`, `{ecoapi.currency}` |
 | [SimpleEconomy](https://github.com/NhanAZ-Plugins/SimpleEconomy) | `{simpleeconomy.balance}` formatted balance, `{simpleeconomy.raw}` raw integer balance, `{simpleeconomy.rank}` leaderboard position |
 | [PurePerms](https://github.com/AxolotlBucketLabs/PurePerms) | `{ppscore.rank}`, `{ppscore.prefix}`, `{ppscore.suffix}` |
-| [PureChat](https://github.com/AxolotlBucketLabs/PureChat) | `{purechat.prefix}`, `{purechat.suffix}`, `{purechat.faction_name}`, `{purechat.faction_rank}`; compatibility aliases `{pureperms.prefix}`, `{pureperms.suffix}`, `{pureperms.group}`, `{pureperms.rank}` |
+| [PureChat](https://github.com/AxolotlBucketLabs/PureChat) | `{purechat.prefix}`, `{purechat.suffix}`, `{purechat.faction_name}`, `{purechat.faction_rank}`. Compatibility aliases are `{pureperms.prefix}`, `{pureperms.suffix}`, `{pureperms.group}`, and `{pureperms.rank}`. |
 
 The sections below document every tag individually.
 
