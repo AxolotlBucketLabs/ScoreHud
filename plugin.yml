@@ -2,7 +2,7 @@ name: ScoreHud
 main: Ifera\ScoreHud\ScoreHud
 api: 5.0.0
 version: 8.0.3
-authors: ["NhanAZ", "Ifera"]
+authors: ["AxolotlBucketLabs", "Ifera"]
 description: Add fully customizable scoreboards to your server.
 
 permissions:

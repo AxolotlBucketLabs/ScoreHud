@@ -6,10 +6,10 @@ servers. The bundled ScoreFactory uses the current scoreboard packet API, so no
 external ScoreHud library, wiki checkout or addon repository is required at
 runtime.
 
-[![CI](https://github.com/NhanAZ-Plugins/ScoreHud/actions/workflows/phpstan.yml/badge.svg)](https://github.com/NhanAZ-Plugins/ScoreHud/actions/workflows/phpstan.yml)
-[![Build PHAR](https://github.com/NhanAZ-Plugins/ScoreHud/actions/workflows/build.yml/badge.svg)](https://github.com/NhanAZ-Plugins/ScoreHud/actions/workflows/build.yml)
-[![Latest release](https://img.shields.io/github/v/release/NhanAZ-Plugins/ScoreHud)](https://github.com/NhanAZ-Plugins/ScoreHud/releases/latest)
-[![License](https://img.shields.io/github/license/NhanAZ-Plugins/ScoreHud)](LICENSE)
+[![CI](https://github.com/AxolotlBucketLabs/ScoreHud/actions/workflows/phpstan.yml/badge.svg)](https://github.com/AxolotlBucketLabs/ScoreHud/actions/workflows/phpstan.yml)
+[![Build PHAR](https://github.com/AxolotlBucketLabs/ScoreHud/actions/workflows/build.yml/badge.svg)](https://github.com/AxolotlBucketLabs/ScoreHud/actions/workflows/build.yml)
+[![Latest release](https://img.shields.io/github/v/release/AxolotlBucketLabs/ScoreHud)](https://github.com/AxolotlBucketLabs/ScoreHud/releases/latest)
+[![License](https://img.shields.io/github/license/AxolotlBucketLabs/ScoreHud)](LICENSE)
 [![Discord](https://img.shields.io/discord/986553214889517088?label=Discord&logo=discord&logoColor=white&color=5865F2)](https://discord.gg/j2X83ujT6c)
 
 ## Features
@@ -112,7 +112,7 @@ ScoreHud PHAR before restarting the server.
 ## Support and changes
 
 Open a reproducible bug report or feature request in the
-[ScoreHud issue tracker](https://github.com/NhanAZ-Plugins/ScoreHud/issues). The
+[ScoreHud issue tracker](https://github.com/AxolotlBucketLabs/ScoreHud/issues). The
 repository changelogs are kept with the source, so this README is the canonical
 user and developer documentation; no external wiki is required.
 
@@ -121,6 +121,6 @@ user and developer documentation; no external wiki is required.
 ScoreHud is distributed under the GNU General Public License v3.0. See
 [LICENSE](LICENSE) for the complete terms. The maintained code preserves the
 original ScoreHud attribution while providing a self-contained Axolotl-PM
-maintenance line under the NhanAZ-Plugins organization.
+maintenance line under the AxolotlBucketLabs organization.
 
-Authors: NhanAZ, Ifera.
+Authors: AxolotlBucketLabs, Ifera.

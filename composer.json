@@ -1,5 +1,5 @@
 {
-    "name": "nhanaz-plugins/scorehud",
+    "name": "axolotlbucketlabs/scorehud",
     "description": "ScoreHud maintained for current Axolotl-PM releases",
     "type": "library",
     "require": {
