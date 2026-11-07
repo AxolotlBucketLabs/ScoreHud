@@ -10,7 +10,7 @@ runtime.
 [![Build PHAR](https://github.com/AxolotlBucketLabs/ScoreHud/actions/workflows/build.yml/badge.svg)](https://github.com/AxolotlBucketLabs/ScoreHud/actions/workflows/build.yml)
 [![Latest release](https://img.shields.io/github/v/release/AxolotlBucketLabs/ScoreHud)](https://github.com/AxolotlBucketLabs/ScoreHud/releases/latest)
 [![License](https://img.shields.io/github/license/AxolotlBucketLabs/ScoreHud)](LICENSE)
-[![Discord](https://img.shields.io/discord/986553214889517088?label=Discord&logo=discord&logoColor=white&color=5865F2)](https://discord.gg/j2X83ujT6c)
+[![Discord](https://img.shields.io/discord/1568295845374206052?label=Discord&logo=discord&logoColor=white&color=5865F2)](https://discord.gg/Pk4FrNvHnM)
 
 ## Features
 
