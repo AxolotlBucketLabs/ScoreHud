@@ -1,6 +1,6 @@
 --- # Poggit-CI manifest for AxolotlBucketLabs/ScoreHud.
 branches:
-  - master
+  - main
 projects:
   ScoreHud:
     icon: meta/ScoreHud.PNG
