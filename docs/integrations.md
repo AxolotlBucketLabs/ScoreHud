@@ -9,7 +9,7 @@ does not require any of these plugins to start.
 | Plugin | Tags |
 | --- | --- |
 | [EcoAPIScore](https://github.com/NhanAZ-Plugins/EcoAPIScore) | `{ecoapi.balance}`, `{ecoapi.raw}`, `{ecoapi.money}`, `{ecoapi.formatted}`, `{ecoapi.provider}`, `{ecoapi.currency}` |
-| [SimpleEconomy](https://github.com/NhanAZ-Plugins/SimpleEconomy) | `{simpleeconomy.balance}` formatted balance, `{simpleeconomy.raw}` raw integer balance, `{simpleeconomy.rank}` leaderboard position |
+| [SimpleEconomy](https://github.com/AxolotlBucketLabs/SimpleEconomy) | `{simpleeconomy.balance}` formatted balance, `{simpleeconomy.raw}` raw integer balance, `{simpleeconomy.rank}` leaderboard position |
 | [PurePerms](https://github.com/AxolotlBucketLabs/PurePerms) | `{ppscore.rank}`, `{ppscore.prefix}`, `{ppscore.suffix}` |
 | [PureChat](https://github.com/AxolotlBucketLabs/PureChat) | `{purechat.prefix}`, `{purechat.suffix}`, `{purechat.faction_name}`, `{purechat.faction_rank}`. Compatibility aliases are `{pureperms.prefix}`, `{pureperms.suffix}`, `{pureperms.group}`, and `{pureperms.rank}`. |
 
@@ -47,7 +47,7 @@ for provider selection and refresh settings.
 
 ## SimpleEconomy
 
-[SimpleEconomy](https://github.com/NhanAZ-Plugins/SimpleEconomy) provides these
+[SimpleEconomy](https://github.com/AxolotlBucketLabs/SimpleEconomy) provides these
 tags directly. The formatted value follows SimpleEconomy's configured currency
 symbol and formatter.
 
